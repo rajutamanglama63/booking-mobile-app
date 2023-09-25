@@ -75,7 +75,6 @@ const HomeScreen = () => {
   // console.log("route: ", route);
 
   const searchPlaces = (place) => {
-    console.log("place: ", place);
     if (!place || !selectedDates) {
       Alert.alert(
         "Invalid Details",
