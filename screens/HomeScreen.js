@@ -1,4 +1,5 @@
 import {
+  Alert,
   Button,
   Image,
   Pressable,
@@ -71,7 +72,36 @@ const HomeScreen = () => {
     );
   };
 
-  console.log("route: ", route);
+  // console.log("route: ", route);
+
+  const searchPlaces = (place) => {
+    console.log("place: ", place);
+    if (!place || !selectedDates) {
+      Alert.alert(
+        "Invalid Details",
+        "Please enter all the details",
+        [
+          {
+            text: "Cancel",
+            onPress: () => console.log("Cancel Pressed"),
+            style: "cancel",
+          },
+          { text: "OK", onPress: () => console.log("OK Pressed") },
+        ],
+        { cancelable: false }
+      );
+    }
+
+    if (place && selectedDates) {
+      navigation.navigate("Places", {
+        rooms: rooms,
+        adults: adults,
+        children: children,
+        selectedDates: selectedDates,
+        place: place,
+      });
+    }
+  };
   return (
     <>
       <View>
@@ -177,6 +207,7 @@ const HomeScreen = () => {
 
             {/* Search Buttons */}
             <Pressable
+              onPress={() => searchPlaces(route?.params.input)}
               style={{
                 paddingHorizontal: 10,
                 borderColor: "#FFC72C",
