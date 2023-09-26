@@ -9,37 +9,6 @@ import { data } from "../data/Data";
 const SearchScreen = () => {
   const [input, setInput] = useState("");
 
-  const services = [
-    {
-      id: "0",
-      name: "room service",
-    },
-    {
-      id: "2",
-      name: "free wifi",
-    },
-    {
-      id: "3",
-      name: "Family rooms",
-    },
-    {
-      id: "4",
-      name: "Free Parking",
-    },
-    {
-      id: "5",
-      name: "swimming pool",
-    },
-    {
-      id: "6",
-      name: "Restaurant",
-    },
-    {
-      id: "7",
-      name: "Fitness center",
-    },
-  ];
-
   return (
     <SafeAreaView>
       <View
