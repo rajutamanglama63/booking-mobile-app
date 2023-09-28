@@ -262,6 +262,19 @@ const PropertyinfoScreen = () => {
         </ScrollView>
 
         <Pressable
+          onPress={() =>
+            navigation.navigate("Rooms", {
+              rooms: route.params.availableRooms,
+              oldPrice: route.params.oldPrice,
+              newPrice: route.params.newPrice,
+              name: route.params.name,
+              children: route.params.children,
+              adults: route.params.adults,
+              rating: route.params.rating,
+              startDate: route.params.selectedDates.startDate,
+              endDate: route.params.selectedDates.endDate,
+            })
+          }
           style={{
             backgroundColor: "#6CB4EE",
             position: "absolute",
